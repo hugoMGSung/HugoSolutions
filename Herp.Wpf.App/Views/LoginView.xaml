@@ -7,13 +7,50 @@
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     mc:Ignorable="d"
-    Title="LOGIN" Height="267" Width="449" WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" ResizeMode="NoResize">
+    Title="SignIn" Height="300" Width="250" 
+    WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" ResizeMode="NoResize">
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
             <iconPacks:PackIconMaterial Kind="Login" Foreground="White" Margin="5, 7, 0, 0" />
         </DataTemplate>
     </mah:MetroWindow.IconTemplate>
-    <Grid>
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="40*" />
+        </Grid.RowDefinitions>
 
+        <Label Content="Hugo ERP"
+               FontSize="30" FontWeight="Bold" Foreground="Blue"
+               VerticalAlignment="Center" HorizontalAlignment="Center"
+               Style="{DynamicResource MahApps.Styles.Label}" />
+
+        <TextBox 
+            x:Name="TxtUserId"
+            Grid.Row="1" Margin="5"
+            mah:TextBoxHelper.Watermark="Insert UserID"
+            mah:TextBoxHelper.UseFloatingWatermark="True" 
+            mah:TextBoxHelper.ClearTextButton="True" />
+
+        <PasswordBox 
+            x:Name="TxtPassword"
+            Grid.Row="2" Margin="5"
+            mah:TextBoxHelper.Watermark="Insert Password"
+            mah:TextBoxHelper.UseFloatingWatermark="True" 
+            mah:TextBoxHelper.ClearTextButton="True" />
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button 
+                x:Name="BtnSignIn"
+                Margin="3" Content="SignIn" Width="100" Height="45"
+                IsEnabled="False"
+                Style="{StaticResource MahApps.Styles.Button.Dialogs.Accent}"/>
+            <Button 
+                x:Name="BtnCancel"
+                Margin="3" Content="Cancel" Width="100" Height="45"
+                Style="{StaticResource MahApps.Styles.Button.Dialogs}"/>
+        </StackPanel>
     </Grid>
 </mah:MetroWindow>

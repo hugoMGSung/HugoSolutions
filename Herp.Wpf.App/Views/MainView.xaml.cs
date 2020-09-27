@@ -13,15 +13,43 @@ namespace Herp.Wpf.App.Views
     /// </summary>
     public partial class MainView : MetroWindow
     {
+        public MainView()
+        {
+            InitializeComponent();
+
+            InitPopWindow();
+            InitMainEvents();
+        }
+
+        private void InitMainEvents()
+        {
+            ContentRendered += OnContentRendered;
+        }
+
+        private void OnContentRendered(object sender, EventArgs e)
+        {
+            LoginView childWindow = new LoginView(this);
+            IsActiveWin = false;
+            childWindow.Owner = this;
+            IsEnabled = false;
+            childWindow.ShowDialog();
+            IsEnabled = true;
+        }
+
+        #region 팝업윈도우 관련 메서드 
+
         private enum FadeDirection
         {
             FadeIn,
             FadeOut
         }
 
-        private readonly TransparentAdorner _windowAdorner;
+        private TransparentAdorner _windowAdorner;
 
         private bool _isActiveWin = true;
+        /// <summary>
+        /// 활성 윈도우 여부
+        /// </summary>
         public bool IsActiveWin
         {
             get => _isActiveWin;
@@ -36,6 +64,11 @@ namespace Herp.Wpf.App.Views
                 else
                     AttachWindowAdorner();
             }
+        }
+
+        private void InitPopWindow()
+        {
+            _windowAdorner = new TransparentAdorner(borderWindow);
         }
 
         private void AttachWindowAdorner()
@@ -75,29 +108,6 @@ namespace Herp.Wpf.App.Views
             border.Background = brush;
         }
 
-        public MainView()
-        {
-            InitializeComponent();
-
-            _windowAdorner = new TransparentAdorner(borderWindow);
-
-            Loaded += OnLoaded;
-            ContentRendered += OnContentRendered;
-        }
-
-        private void OnContentRendered(object sender, EventArgs e)
-        {
-            LoginView childWindow = new LoginView(this);
-            IsActiveWin = false;
-            childWindow.Owner = this;
-            IsEnabled = false;
-            childWindow.ShowDialog();
-            IsEnabled = true;
-        }
-
-        private void OnLoaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
+        #endregion
     }
 }
