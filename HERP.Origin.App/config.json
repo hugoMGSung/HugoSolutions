@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0", 
+  "domain": "www.hugo-mg-sung.com",
+  "sqlserver": {
+    "host": "localhost",
+    "port": 1443,
+    "database": "HERP",
+    "userid": "sa",
+    "password": "mssql_p@ssw0rd"
+  },
+  "userconfig": {
+    "userid": ""
+  }
+}

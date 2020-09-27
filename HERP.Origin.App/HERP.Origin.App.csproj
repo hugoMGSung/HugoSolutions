@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{27E719EC-A51E-4749-992B-16C8CF42503C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HERP.Origin.App</RootNamespace>
+    <AssemblyName>HERP.Origin.App</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>work.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.35\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.4\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\LoginProc.cs" />
+    <Compile Include="Business\MainProc.cs" />
+    <Compile Include="Helpers\Commons.cs" />
+    <Compile Include="Helpers\SqlHelper.cs" />
+    <Compile Include="Model\LoginModelDal.cs" />
+    <Compile Include="Model\MainModelDal.cs" />
+    <Compile Include="Model\MyTable.cs" />
+    <Compile Include="Model\QueryBanks.cs" />
+    <Compile Include="Views\HugoUserControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HugoUserControl.Designer.cs">
+      <DependentUpon>HugoUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\SYS1001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SYS1001.Designer.cs">
+      <DependentUpon>SYS1001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SYS2001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SYS2001.Designer.cs">
+      <DependentUpon>SYS2001.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\SYS1001.resx">
+      <DependentUpon>SYS1001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SYS2001.resx">
+      <DependentUpon>SYS2001.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu.bmp" />
+    <None Include="Resources\background_Logo2.png" />
+    <Content Include="MetroFramework.txt" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\arrow_blue.gif" />
+    <None Include="Resources\btn_1_copy.gif" />
+    <None Include="Resources\btn_1_copy1.gif" />
+    <None Include="Resources\btn_Add.png" />
+    <None Include="Resources\btn_Close.png" />
+    <None Include="Resources\btn_Delete.png" />
+    <None Include="Resources\btn_Excel.png" />
+    <None Include="Resources\btn_new.png" />
+    <None Include="Resources\btn_Print.png" />
+    <None Include="Resources\btn_RowAdd.png" />
+    <None Include="Resources\btn_RowDel.png" />
+    <None Include="Resources\btn_rowemt.gif" />
+    <None Include="Resources\btn_Save.png" />
+    <None Include="Resources\btn_Search.png" />
+    <None Include="Resources\btn_Toolbox.png" />
+    <None Include="Resources\btnback.bmp" />
+    <None Include="Resources\ic_arrow.gif" />
+    <None Include="Resources\ic_arrow_b.gif" />
+    <None Include="Resources\ic_arrow_l.gif" />
+    <None Include="Resources\ic_arrow_r.gif" />
+    <None Include="Resources\ic_arrow_t.gif" />
+    <None Include="Resources\ic_check.png" />
+    <None Include="Resources\ic_dot1.gif" />
+    <None Include="Resources\ic_folder.gif" />
+    <None Include="Resources\ic_folder_open.gif" />
+    <None Include="Resources\ic_Msg.png" />
+    <None Include="Resources\ic_msg_alert.gif" />
+    <None Include="Resources\ic_msg_ask.gif" />
+    <None Include="Resources\ic_msg_cancel.gif" />
+    <None Include="Resources\ic_msg_confirm.gif" />
+    <None Include="Resources\ic_start.gif" />
+    <None Include="Resources\image_load.bmp" />
+    <None Include="Resources\image_plus.bmp" />
+    <None Include="Resources\loading.gif" />
+    <None Include="Resources\minus.bmp" />
+    <None Include="Resources\move.bmp" />
+    <None Include="Resources\plus.bmp" />
+    <None Include="Resources\title_bar_bg.png" />
+    <None Include="Resources\title_bar_label_bg.png" />
+    <None Include="Resources\title_head.png" />
+    <None Include="Resources\title_ic2.gif" />
+    <Content Include="work.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HERP.Controls\HERP.Controls.csproj">
+      <Project>{a48b95ef-faad-4817-a6c9-25cd737e558e}</Project>
+      <Name>HERP.Controls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
