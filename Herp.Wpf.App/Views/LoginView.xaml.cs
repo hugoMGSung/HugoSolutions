@@ -2,7 +2,11 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using Herp.Wpf.App.Models;
+using Herp.Wpf.App.Processors;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace Herp.Wpf.App.Views
 {
@@ -13,13 +17,18 @@ namespace Herp.Wpf.App.Views
     {
         private readonly MainView _parentView;
 
+        private LoginProc _loginProc;
+
         public LoginView(MainView parentView)
         {
             InitializeComponent();
+            _loginProc = new LoginProc();
+
             _parentView = parentView;
 
             InitMainEvents();
             InitControlEvents();
+            TxtUserId.Focus();
         }
 
         /// <summary>
@@ -29,6 +38,11 @@ namespace Herp.Wpf.App.Views
         {
             TxtUserId.TextChanged += TxtUserIdOnTextChanged;
             TxtPassword.PasswordChanged += TxtPasswordOnPasswordChanged;
+            TxtPassword.KeyDown += (sender, args) =>
+            {
+                if (args.Key == Key.Enter)
+                    BtnSignInOnClick(sender, args);
+            };
 
             BtnSignIn.Click += BtnSignInOnClick;
             BtnCancel.Click += BtnCancelOnClick;
@@ -60,10 +74,29 @@ namespace Herp.Wpf.App.Views
             Environment.Exit(0); // 프로그램 완전 종료
         }
 
-        private void BtnSignInOnClick(object sender, RoutedEventArgs e)
+        private async void BtnSignInOnClick(object sender, RoutedEventArgs e)
         {
             // 패스워드 확인
-            MessageBox.Show(TxtPassword.Password);
+            //var result = await this.ShowInputAsync("Hello!", "What is your name?");
+            //if (result == null) return;
+
+            //await this.ShowMessageAsync("SignIn", $"{TxtPassword.Password}");
+            var paramUser = new Users {
+                UserId = TxtUserId.Text.Trim(), 
+                Password = TxtPassword.Password.Trim()
+            };
+            var result = _loginProc.CheckUserInfo(paramUser);
+            if (result)
+            {
+                // 로그인하고 창 닫고 메인화면으로 넘어가기
+                _parentView.IsActiveWin = true;
+                this.Hide();
+            }
+            else
+            {
+                await this.ShowMessageAsync("SignIn", $"Incorrect Information!!");
+            }
+
         }
 
         /// <summary>

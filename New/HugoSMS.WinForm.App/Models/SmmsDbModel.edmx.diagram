@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f33475bda24a44d98ddf34609e2b713d" Name="Diagram1">
+        <EntityTypeShape EntityType="ssmsModel.Antenna" Width="1.5" PointX="7.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssmsModel.Barcode" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssmsModel.BookOut" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssmsModel.BookOutItem" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssmsModel.Brand" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssmsModel.Category" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssmsModel.Item" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssmsModel.Reader" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssmsModel.Stock" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssmsModel.Store" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssmsModel.Tag" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ssmsModel.User" Width="1.5" PointX="0.75" PointY="14.5" IsExpanded="true" />
+        <AssociationConnector Association="ssmsModel.FK_AntennaReader" ManuallyRouted="false" />
+        <AssociationConnector Association="ssmsModel.FK_ItemBarcode" ManuallyRouted="false" />
+        <AssociationConnector Association="ssmsModel.FK_BookOut_Item" ManuallyRouted="false" />
+        <AssociationConnector Association="ssmsModel.FK_BookOutUSer" ManuallyRouted="false" />
+        <AssociationConnector Association="ssmsModel.FK_BookOutItem_Item" ManuallyRouted="false" />
+        <AssociationConnector Association="ssmsModel.FK_ItemBrand" ManuallyRouted="false" />
+        <AssociationConnector Association="ssmsModel.FK_ItemCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="ssmsModel.FK_ItemTag" ManuallyRouted="false" />
+        <AssociationConnector Association="ssmsModel.FK_StockItem" ManuallyRouted="false" />
+        <AssociationConnector Association="ssmsModel.FK_ReaderStore" ManuallyRouted="false" />
+        <AssociationConnector Association="ssmsModel.FK_StockStore" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

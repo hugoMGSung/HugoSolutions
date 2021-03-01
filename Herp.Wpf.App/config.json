@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0", 
+  "domain": "newerp.hugo.com",
+  "sqlserver": {
+    "host": "localhost",
+    "port": 1443,
+    "database": "HERP_NEW",
+    "userid": "sa",
+    "password": "mssql_p@ssw0rd"
+  },
+  "userconfig": {
+    "userid": ""
+  }
+}

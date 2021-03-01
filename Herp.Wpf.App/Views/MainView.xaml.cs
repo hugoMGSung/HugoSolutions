@@ -19,6 +19,14 @@ namespace Herp.Wpf.App.Views
 
             InitPopWindow();
             InitMainEvents();
+
+            InitMainBoard();
+        }
+
+        private void InitMainBoard()
+        {
+            // 컨텐츠 컨트롤에 신규 추가
+            ActiveItem.Content = new DashboardUc();
         }
 
         private void InitMainEvents()
@@ -106,6 +114,31 @@ namespace Herp.Wpf.App.Views
             var brush = new SolidColorBrush { Color = Colors.Black };
             brush.BeginAnimation(Brush.OpacityProperty, animFade);
             border.Background = brush;
+        }
+
+        #endregion
+
+        #region 메뉴클릭 메서드
+
+        private void MnuConfig_OnClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void MnuExit_OnClick(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0); // 프로그램 완전 종료
+        }
+
+        private void MnuHome_OnClick(object sender, RoutedEventArgs e)
+        {
+            InitMainBoard();
+        }
+
+        private void MnuEmployees_OnClick(object sender, RoutedEventArgs e)
+        {
+            // 컨텐츠 컨트롤에 신규 추가
+            ActiveItem.Content = new EmployeesUc();
         }
 
         #endregion

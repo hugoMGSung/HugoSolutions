@@ -5,16 +5,73 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
-    xmlns:local="clr-namespace:Herp.Wpf.App.Views"
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     mc:Ignorable="d"
-    Title="Hugo ERP" Height="720" Width="1280" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+    Title="Hugo ERP" Height="720" Width="1280" WindowState="Maximized" 
+    MinWidth="700" MinHeight="420"
+    WindowStartupLocation="CenterScreen">
     <mah:MetroWindow.IconTemplate>
+        <!-- 메인 아이콘 -->
         <DataTemplate>
             <iconPacks:PackIconMaterialDesign Kind="InsertChart" Foreground="White" Margin="5, 7, 0, 0" />
         </DataTemplate>
     </mah:MetroWindow.IconTemplate>
     <Border Name="borderWindow">
-        <Grid/>
+        <!-- 자식창 팝업용 -->
+        <DockPanel>
+            <!-- 매뉴영역 -->
+            <Grid DockPanel.Dock="Top">
+                <StackPanel>
+                    <Menu IsMainMenu="True">
+                        <MenuItem Header="_File">
+                            <MenuItem x:Name="MnuHome" Header="Home" Click="MnuHome_OnClick">
+                                <MenuItem.Icon>
+                                    <iconPacks:PackIconTypicons Kind="Home" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem x:Name="MnuConfig" Header="Configuration" Click="MnuConfig_OnClick">
+                                <MenuItem.Icon>
+                                    <iconPacks:PackIconModern Kind="ConfirmYesNo" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator />
+                            <MenuItem x:Name="MnuExit" Header="Exit" Click="MnuExit_OnClick">
+                                <MenuItem.Icon>
+                                    <iconPacks:PackIconBoxIcons Kind="SolidExit" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="_Management">
+                            <MenuItem Header="_Human Resources">
+                                <MenuItem.Icon>
+                                    <iconPacks:PackIconMaterial Kind="HumanMaleFemale" />
+                                </MenuItem.Icon>
+                                <MenuItem Header="_Team">
+                                    <MenuItem.Icon>
+                                        <iconPacks:PackIconFontAwesome Kind="UsersSolid" />
+                                    </MenuItem.Icon>
+                                    <MenuItem x:Name="MnuEmployees" Header="Employees" Click="MnuEmployees_OnClick">
+                                        <MenuItem.Icon>
+                                            <iconPacks:PackIconMaterial Kind="AccountHardHat" />
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <MenuItem></MenuItem>
+                                </MenuItem>
+                                <MenuItem></MenuItem>
+                            </MenuItem>
+                            <MenuItem x:Name="MnuPayment" Header="_Payment">
+                                <MenuItem.Icon>
+                                    <iconPacks:PackIconFontAwesome Kind="CommentDollarSolid" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+                    </Menu>
+                </StackPanel>
+            </Grid>
+            <!-- 컨텐츠 영역 -->
+            <Grid Background="WhiteSmoke">
+                <ContentControl x:Name="ActiveItem" />
+            </Grid>
+        </DockPanel>
     </Border>
 </mah:MetroWindow>

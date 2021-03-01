@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.IO;
 using System.Windows;
+using Herp.Wpf.App.Helpers;
+using Newtonsoft.Json.Linq;
 
 namespace Herp.Wpf.App
 {
@@ -13,5 +10,20 @@ namespace Herp.Wpf.App
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            JObject obj = JObject.Parse(File.ReadAllText(@"config.json"));
+            Commons.ConnString = $"Data Source={obj["sqlserver"]["host"]};" +
+                                 $"Initial Catalog={obj["sqlserver"]["database"]};" +
+                                 "Persist Security Info=True;" +
+                                 $"User ID={obj["sqlserver"]["userid"]};" +
+                                 $"Password={obj["sqlserver"]["password"]}";
+
+            Commons.RegUserId = obj["userconfig"]["userid"].ToString();
+            Commons.Version = obj["version"].ToString();
+            Commons.Domain = obj["domain"].ToString();
+
+            base.OnStartup(e);
+        }
     }
 }
