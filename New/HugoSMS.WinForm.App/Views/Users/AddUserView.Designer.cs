@@ -143,15 +143,15 @@ namespace HugoSMS.WinForm.App.Views.Users
             // BtnBack
             // 
             this.BtnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnBack.BackgroundImage = global::HugoSMS.WinForm.App.Properties.Resources.reply__1_;
-            this.BtnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnBack.BackgroundImage = global::HugoSMS.WinForm.App.Properties.Resources.back_arrow;
+            this.BtnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BtnBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.BtnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBack.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBack.Font = new System.Drawing.Font("나눔고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnBack.Location = new System.Drawing.Point(1115, 374);
+            this.BtnBack.Location = new System.Drawing.Point(1118, 362);
             this.BtnBack.Name = "BtnBack";
-            this.BtnBack.Size = new System.Drawing.Size(71, 104);
+            this.BtnBack.Size = new System.Drawing.Size(64, 117);
             this.BtnBack.TabIndex = 343;
             this.BtnBack.Text = "뒤로";
             this.BtnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -192,24 +192,24 @@ namespace HugoSMS.WinForm.App.Views.Users
             // LblAdd
             // 
             this.LblAdd.AutoSize = true;
-            this.LblAdd.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblAdd.Location = new System.Drawing.Point(444, 356);
+            this.LblAdd.Font = new System.Drawing.Font("나눔고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblAdd.Location = new System.Drawing.Point(1055, 453);
             this.LblAdd.Name = "LblAdd";
-            this.LblAdd.Size = new System.Drawing.Size(50, 24);
+            this.LblAdd.Size = new System.Drawing.Size(46, 21);
             this.LblAdd.TabIndex = 339;
             this.LblAdd.Text = "추가";
             // 
             // BtnAdd
             // 
-            this.BtnAdd.BackgroundImage = global::HugoSMS.WinForm.App.Properties.Resources.ok_appproval_acceptance__1_;
-            this.BtnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnAdd.BackgroundImage = global::HugoSMS.WinForm.App.Properties.Resources.sign_check;
+            this.BtnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BtnAdd.Enabled = false;
             this.BtnAdd.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAdd.Font = new System.Drawing.Font("나눔고딕", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.BtnAdd.Location = new System.Drawing.Point(424, 296);
+            this.BtnAdd.Location = new System.Drawing.Point(1045, 386);
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(93, 56);
+            this.BtnAdd.Size = new System.Drawing.Size(64, 64);
             this.BtnAdd.TabIndex = 338;
             this.BtnAdd.UseVisualStyleBackColor = true;
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);

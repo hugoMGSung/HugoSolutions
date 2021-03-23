@@ -17,6 +17,10 @@ namespace HugoSMS.WinForm.App.Views.Users
         private void UserView_Load(object sender, EventArgs e)
         {
             RboAll.Checked = true;
+
+            DgvUsers.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DgvUsers.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            DgvUsers.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
@@ -40,7 +44,7 @@ namespace HugoSMS.WinForm.App.Views.Users
                 }
                 else if (RboDeactivated.Checked)
                 {
-                    users =temps.Where(s => s.UserActivated == false).ToList();
+                    users = temps.Where(s => s.UserActivated == false).ToList();
                     DisplayGridView(users);
                 }
                 else
@@ -66,9 +70,9 @@ namespace HugoSMS.WinForm.App.Views.Users
             }
         }
 
-        private void BtnAddUser_Click(object sender, EventArgs e)
+        private void BtnMenu_Click(object sender, EventArgs e)
         {
-            var buttonTag = ((Button) sender).Tag.ToString();
+            var buttonTag = ((Button)sender).Tag.ToString();
             ProcChangeView(buttonTag);
         }
 
@@ -84,7 +88,8 @@ namespace HugoSMS.WinForm.App.Views.Users
                     ((MainView)Parent.Parent).ChangeView<EditUserView>();
                     break;
 
-                case "ACTIVATE": 
+                case "ACTIVATE":
+                    ((MainView)Parent.Parent).ChangeView<DeactivateUserView>();
                     break;
 
                 default:
@@ -92,10 +97,5 @@ namespace HugoSMS.WinForm.App.Views.Users
             }
         }
 
-        private void BtnUpdateUser_Click(object sender, EventArgs e)
-        {
-            var buttonTag = ((Button)sender).Tag.ToString();
-            ProcChangeView(buttonTag);
-        }
     }
 }

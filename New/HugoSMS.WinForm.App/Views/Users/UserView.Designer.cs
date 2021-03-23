@@ -38,7 +38,6 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.BtnUpdateUser = new System.Windows.Forms.Button();
             this.BtnAddUser = new System.Windows.Forms.Button();
             this.DgvUsers = new System.Windows.Forms.DataGridView();
-            this.RboDeactivated = new System.Windows.Forms.RadioButton();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserIDentityNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +45,7 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.UserEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserActivated = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RboDeactivated = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,8 +74,9 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.BtnDeactivateUser.Size = new System.Drawing.Size(228, 43);
             this.BtnDeactivateUser.TabIndex = 106;
             this.BtnDeactivateUser.Tag = "ACTIVATE";
-            this.BtnDeactivateUser.Text = "사용자 활성화";
+            this.BtnDeactivateUser.Text = "사용자 비활성화";
             this.BtnDeactivateUser.UseVisualStyleBackColor = false;
+            this.BtnDeactivateUser.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
             // RboActivated
             // 
@@ -140,7 +141,7 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.BtnUpdateUser.Tag = "UPDATE";
             this.BtnUpdateUser.Text = "사용자 수정";
             this.BtnUpdateUser.UseVisualStyleBackColor = false;
-            this.BtnUpdateUser.Click += new System.EventHandler(this.BtnUpdateUser_Click);
+            this.BtnUpdateUser.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
             // BtnAddUser
             // 
@@ -158,7 +159,7 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.BtnAddUser.Tag = "ADD";
             this.BtnAddUser.Text = "사용자 추가";
             this.BtnAddUser.UseVisualStyleBackColor = false;
-            this.BtnAddUser.Click += new System.EventHandler(this.BtnAddUser_Click);
+            this.BtnAddUser.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
             // DgvUsers
             // 
@@ -185,21 +186,6 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.DgvUsers.RowHeadersVisible = false;
             this.DgvUsers.Size = new System.Drawing.Size(955, 433);
             this.DgvUsers.TabIndex = 99;
-            // 
-            // RboDeactivated
-            // 
-            this.RboDeactivated.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RboDeactivated.AutoSize = true;
-            this.RboDeactivated.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RboDeactivated.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RboDeactivated.Location = new System.Drawing.Point(904, 28);
-            this.RboDeactivated.Name = "RboDeactivated";
-            this.RboDeactivated.Size = new System.Drawing.Size(61, 19);
-            this.RboDeactivated.TabIndex = 105;
-            this.RboDeactivated.TabStop = true;
-            this.RboDeactivated.Text = "비활성";
-            this.RboDeactivated.UseVisualStyleBackColor = true;
-            this.RboDeactivated.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // UserID
             // 
@@ -253,6 +239,21 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.UserActivated.HeaderText = "활성";
             this.UserActivated.Name = "UserActivated";
             this.UserActivated.ReadOnly = true;
+            // 
+            // RboDeactivated
+            // 
+            this.RboDeactivated.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.RboDeactivated.AutoSize = true;
+            this.RboDeactivated.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RboDeactivated.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.RboDeactivated.Location = new System.Drawing.Point(904, 28);
+            this.RboDeactivated.Name = "RboDeactivated";
+            this.RboDeactivated.Size = new System.Drawing.Size(61, 19);
+            this.RboDeactivated.TabIndex = 105;
+            this.RboDeactivated.TabStop = true;
+            this.RboDeactivated.Text = "비활성";
+            this.RboDeactivated.UseVisualStyleBackColor = true;
+            this.RboDeactivated.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // UserView
             // 

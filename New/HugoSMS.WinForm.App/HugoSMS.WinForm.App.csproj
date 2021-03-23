@@ -153,11 +153,29 @@
     <Compile Include="Views\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\MyAccount\AccountView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MyAccount\AccountView.Designer.cs">
+      <DependentUpon>AccountView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyAccount\EditAccountView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MyAccount\EditAccountView.Designer.cs">
+      <DependentUpon>EditAccountView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Users\AddUserView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Users\AddUserView.Designer.cs">
       <DependentUpon>AddUserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Users\DeactivateUserView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Users\DeactivateUserView.Designer.cs">
+      <DependentUpon>DeactivateUserView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Users\EditUserView.cs">
       <SubType>UserControl</SubType>
@@ -193,8 +211,17 @@
     <EmbeddedResource Include="Views\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\MyAccount\AccountView.resx">
+      <DependentUpon>AccountView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MyAccount\EditAccountView.resx">
+      <DependentUpon>EditAccountView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Users\AddUserView.resx">
       <DependentUpon>AddUserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Users\DeactivateUserView.resx">
+      <DependentUpon>DeactivateUserView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Users\EditUserView.resx">
       <DependentUpon>EditUserView.cs</DependentUpon>
@@ -238,34 +265,184 @@
       <DependentUpon>SmmsDbModel.edmx</DependentUpon>
       <LastGenOutput>SmmsDbModel.cs</LastGenOutput>
     </Content>
+    <None Include="resources\ai.png" />
+    <None Include="resources\bag.png" />
+    <None Include="resources\bansign.png" />
+    <None Include="resources\beer.png" />
+    <None Include="resources\bizcard.png" />
+    <None Include="resources\blue_folder.png" />
+    <None Include="resources\book.png" />
+    <None Include="resources\bookmark_file.png" />
+    <None Include="resources\box_full.png" />
+    <None Include="resources\box_in.png" />
+    <None Include="resources\box_out.png" />
+    <None Include="resources\bubble.png" />
+    <None Include="resources\bubbles.png" />
+    <None Include="resources\bulb_light.png" />
+    <None Include="resources\calendar.png" />
+    <None Include="resources\calendar2.png" />
+    <None Include="resources\calendar3.png" />
+    <None Include="resources\camera.png" />
+    <None Include="resources\camera0.png" />
+    <None Include="resources\camera2.png" />
+    <None Include="resources\address_book.png" />
+    <None Include="resources\address_book2.png" />
+    <None Include="resources\address_book3.png" />
+    <None Include="resources\back_arrow.png" />
     <Content Include="resources\cancel-music.png" />
+    <None Include="resources\cat.png" />
+    <None Include="resources\cat2.png" />
+    <None Include="resources\chat.png" />
+    <None Include="resources\chat2.png" />
+    <None Include="resources\chat3.png" />
+    <None Include="resources\clock.png" />
+    <None Include="resources\clock2.png" />
+    <None Include="resources\cloud.png" />
+    <None Include="resources\cloud_down.png" />
+    <None Include="resources\cloud_sync.png" />
+    <None Include="resources\code_file.png" />
+    <None Include="resources\cog.png" />
+    <None Include="resources\cogs.png" />
+    <None Include="resources\compas.png" />
+    <None Include="resources\component.png" />
+    <None Include="resources\computer.png" />
+    <None Include="resources\cone.png" />
+    <None Include="resources\database.png" />
+    <None Include="resources\database2.png" />
+    <None Include="resources\disc.png" />
+    <None Include="resources\disc3.png" />
+    <None Include="resources\doc_folder.png" />
+    <None Include="resources\drive.png" />
+    <None Include="resources\drive2.png" />
+    <None Include="resources\earch.png" />
+    <None Include="resources\empty.png" />
+    <None Include="resources\enveloppe.png" />
+    <None Include="resources\enveloppe2.png" />
+    <None Include="resources\enveloppe3.png" />
+    <None Include="resources\enveloppe4.png" />
+    <None Include="resources\error_shield.png" />
+    <None Include="resources\error_sign.png" />
+    <None Include="resources\excel.png" />
+    <None Include="resources\excel2.png" />
+    <None Include="resources\exe_file.png" />
+    <None Include="resources\facebook.png" />
+    <None Include="resources\filezip.png" />
+    <None Include="resources\film_movie.png" />
+    <None Include="resources\filter.png" />
+    <None Include="resources\flask.png" />
+    <None Include="resources\floppy_save.png" />
+    <None Include="resources\folder.png" />
+    <None Include="resources\gamepad.png" />
+    <None Include="resources\gift.png" />
+    <None Include="resources\google+.png" />
+    <None Include="resources\green_folder.png" />
+    <None Include="resources\green_movie.png" />
+    <None Include="resources\group_profile.png" />
+    <None Include="resources\headphone.png" />
+    <None Include="resources\heart.png" />
+    <None Include="resources\house.png" />
+    <None Include="resources\house_folder.png" />
+    <None Include="resources\delete.png" />
     <Content Include="resources\icons8-RFID Signal Filled-50.png" />
     <Content Include="resources\icons8-RFID Signal-64.png" />
     <Content Include="resources\icons8-RFID Signal-64SMALL.png" />
+    <None Include="resources\image.png" />
+    <None Include="resources\image_file.png" />
+    <None Include="resources\image_pci.png" />
+    <None Include="resources\indesign.png" />
+    <None Include="resources\institution.png" />
     <Content Include="resources\Items %281%29.png" />
+    <None Include="resources\land_marker.png" />
+    <None Include="resources\layout_window.png" />
+    <None Include="resources\life_buoy.png" />
+    <None Include="resources\like.png" />
+    <None Include="resources\link_file.png" />
+    <None Include="resources\lock.png" />
+    <None Include="resources\lock2.png" />
+    <None Include="resources\lp.png" />
+    <None Include="resources\map.png" />
+    <None Include="resources\map_marker.png" />
+    <None Include="resources\map2.png" />
+    <None Include="resources\marker.png" />
+    <None Include="resources\microphone.png" />
+    <None Include="resources\money.png" />
+    <None Include="resources\monitor.png" />
     <Content Include="resources\multiple-users-silhouette.png" />
+    <None Include="resources\music_folder.png" />
+    <None Include="resources\notepad.png" />
+    <None Include="resources\notes.png" />
     <Content Include="resources\ok-appproval-acceptance %281%29.png" />
     <Content Include="resources\ok-appproval-acceptance.png" />
     <Content Include="resources\ok-like-hand-sign.png" />
     <Content Include="resources\ok.png" />
+    <None Include="resources\paperclip.png" />
+    <None Include="resources\paperclip2.png" />
+    <None Include="resources\pdf.png" />
+    <None Include="resources\pencil.png" />
+    <None Include="resources\photoshop.png" />
+    <None Include="resources\pic_folder.png" />
+    <None Include="resources\pin.png" />
     <Content Include="resources\play-button %281%29.png" />
     <Content Include="resources\play-button %281%292.png" />
     <Content Include="resources\play-button.png" />
+    <None Include="resources\powerpoint.png" />
+    <None Include="resources\premiere.png" />
+    <None Include="resources\profile.png" />
+    <None Include="resources\profile3.png" />
+    <None Include="resources\red_movie.png" />
     <Content Include="resources\reply %281%29.png" />
     <Content Include="resources\reply.png" />
     <Content Include="resources\right-arrow.png" />
+    <None Include="resources\rss.png" />
     <Content Include="resources\rubbish-bin %281%29.png" />
     <Content Include="resources\rubbish-bin.png" />
+    <None Include="resources\schedule.png" />
+    <None Include="resources\screwdriver_wrench.png" />
+    <None Include="resources\search%27.png" />
     <Content Include="resources\search.png" />
     <Content Include="resources\settings-gears.png" />
+    <None Include="resources\shield.png" />
     <Content Include="resources\sign-out-option.png" />
+    <None Include="resources\sign_add.png" />
+    <None Include="resources\sign_check.png" />
+    <None Include="resources\sign_info.png" />
+    <None Include="resources\sound_file.png" />
+    <None Include="resources\star.png" />
+    <None Include="resources\star2.png" />
+    <None Include="resources\sticky_note.png" />
     <Content Include="resources\stock.ico" />
     <Content Include="resources\stock.png" />
     <Content Include="resources\stop.png" />
     <Content Include="resources\Synertech-RFID.png" />
+    <None Include="resources\system_window.png" />
+    <None Include="resources\tablet.png" />
+    <None Include="resources\tachometer.png" />
+    <None Include="resources\tag.png" />
+    <None Include="resources\terminal.png" />
+    <None Include="resources\terminal2.png" />
+    <None Include="resources\text.png" />
+    <None Include="resources\trashcan.png" />
     <Content Include="resources\trolley.png" />
+    <None Include="resources\turntable.png" />
+    <None Include="resources\unlock.png" />
+    <None Include="resources\unlock2.png" />
     <Content Include="resources\user-account-box.png" />
+    <None Include="resources\user.png" />
+    <None Include="resources\user_group.png" />
+    <None Include="resources\user2.png" />
+    <None Include="resources\video_folder.png" />
     <Content Include="resources\warehouse.png" />
+    <None Include="resources\warning_shield.png" />
+    <None Include="resources\webcam.png" />
+    <None Include="resources\window.png" />
+    <None Include="resources\window2.png" />
+    <None Include="resources\word.png" />
+    <None Include="resources\word_file.png" />
+    <None Include="resources\wrench.png" />
+    <None Include="resources\wrench2.png" />
+    <None Include="resources\youtube.png" />
+    <None Include="resources\zip_file.png" />
+    <None Include="resources\zip_file2.png" />
     <Content Include="stock.ico" />
   </ItemGroup>
   <ItemGroup />

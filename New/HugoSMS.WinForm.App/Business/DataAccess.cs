@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,7 +39,7 @@ namespace HugoSMS.WinForm.App.Business
         {
             using (var ctx = new ssmsEntities())
             {
-                ctx.User.Add(tmpUser);
+                ctx.User.AddOrUpdate(tmpUser);
                 return ctx.SaveChanges();
             }
         }

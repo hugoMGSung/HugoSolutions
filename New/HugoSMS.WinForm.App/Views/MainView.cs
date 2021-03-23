@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using HugoSMS.WinForm.App.Helpers;
 using HugoSMS.WinForm.App.Views.Items;
+using HugoSMS.WinForm.App.Views.MyAccount;
 using HugoSMS.WinForm.App.Views.Users;
 using MetroFramework;
 
@@ -64,6 +65,24 @@ namespace HugoSMS.WinForm.App.Views
                 {
                     COMMONS.LOGGED_IN_USER = null;
                     ((MainForm)this.Parent.Parent).ChangeView<LoginView>();
+                }
+            }
+        }
+
+        private void BtnMyAccount_Click(object sender, EventArgs e)
+        {
+            if (COMMONS.IS_SCAN != true)
+            {
+                if (COMMONS.LOGGED_IN_USER.UserAdmin != true)
+                {
+                    MetroMessageBox.Show(this, "죄송합니다. 사용자 메뉴에 접근할 권한이 없습니다.");
+                    COMMONS.LOGGER.Error("Admin permission error!");
+                    return;
+                }
+                else
+                {
+                    COMMONS.LOGGER.Info("MyAccount change!");
+                    ChangeView<AccountView>();
                 }
             }
         }

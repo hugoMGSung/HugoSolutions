@@ -113,6 +113,7 @@ namespace HugoSMS.WinForm.App.Views
             this.BtnMyAccount.Text = "내 계정";
             this.BtnMyAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnMyAccount.UseVisualStyleBackColor = false;
+            this.BtnMyAccount.Click += new System.EventHandler(this.BtnMyAccount_Click);
             // 
             // BtnSettings
             // 

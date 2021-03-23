@@ -30,9 +30,15 @@ namespace HugoSMS.WinForm.App.Views.Users
         private void InitializeComponent()
         {
             this.DgvUsers = new System.Windows.Forms.DataGridView();
+            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserIDentityNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserActivated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TxtPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.BtnSearch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -42,7 +48,6 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.lblAdmin = new System.Windows.Forms.Label();
             this.TxtSearch = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.BtnUpdate = new System.Windows.Forms.Button();
             this.TxtSurName = new System.Windows.Forms.TextBox();
             this.CboActivated = new System.Windows.Forms.ComboBox();
             this.TxtEmail = new System.Windows.Forms.TextBox();
@@ -57,18 +62,13 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.label13 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.BtnBack = new System.Windows.Forms.Button();
             this.RboDeactivated = new System.Windows.Forms.RadioButton();
             this.RboActivated = new System.Windows.Forms.RadioButton();
             this.RboAll = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserIDentityNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserAdmin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserActivated = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnSearch = new System.Windows.Forms.Button();
+            this.BtnUpdate = new System.Windows.Forms.Button();
+            this.BtnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,12 +90,63 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.UserAdmin,
             this.UserActivated});
             this.DgvUsers.Location = new System.Drawing.Point(10, 52);
+            this.DgvUsers.MultiSelect = false;
             this.DgvUsers.Name = "DgvUsers";
             this.DgvUsers.ReadOnly = true;
             this.DgvUsers.RowHeadersVisible = false;
             this.DgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvUsers.Size = new System.Drawing.Size(1184, 199);
             this.DgvUsers.TabIndex = 268;
+            this.DgvUsers.SelectionChanged += new System.EventHandler(this.DgvUsers_SelectionChanged);
+            // 
+            // UserID
+            // 
+            this.UserID.FillWeight = 51.87928F;
+            this.UserID.HeaderText = "번호";
+            this.UserID.Name = "UserID";
+            this.UserID.ReadOnly = true;
+            // 
+            // UserIDentityNumber
+            // 
+            this.UserIDentityNumber.FillWeight = 107.9338F;
+            this.UserIDentityNumber.HeaderText = "고유번호";
+            this.UserIDentityNumber.Name = "UserIDentityNumber";
+            this.UserIDentityNumber.ReadOnly = true;
+            // 
+            // UserName
+            // 
+            this.UserName.FillWeight = 125.1442F;
+            this.UserName.HeaderText = "이름";
+            this.UserName.Name = "UserName";
+            this.UserName.ReadOnly = true;
+            // 
+            // UserSurname
+            // 
+            this.UserSurname.FillWeight = 87.93034F;
+            this.UserSurname.HeaderText = "성";
+            this.UserSurname.Name = "UserSurname";
+            this.UserSurname.ReadOnly = true;
+            // 
+            // UserEmail
+            // 
+            this.UserEmail.FillWeight = 332.7003F;
+            this.UserEmail.HeaderText = "이메일";
+            this.UserEmail.Name = "UserEmail";
+            this.UserEmail.ReadOnly = true;
+            // 
+            // UserAdmin
+            // 
+            this.UserAdmin.FillWeight = 88.87912F;
+            this.UserAdmin.HeaderText = "관리자여부";
+            this.UserAdmin.Name = "UserAdmin";
+            this.UserAdmin.ReadOnly = true;
+            // 
+            // UserActivated
+            // 
+            this.UserActivated.FillWeight = 51.53299F;
+            this.UserActivated.HeaderText = "활성화";
+            this.UserActivated.Name = "UserActivated";
+            this.UserActivated.ReadOnly = true;
             // 
             // TxtPassword
             // 
@@ -112,25 +163,9 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(27, 400);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 19);
+            this.label4.Size = new System.Drawing.Size(78, 19);
             this.label4.TabIndex = 266;
-            this.label4.Text = "Password:";
-            // 
-            // BtnSearch
-            // 
-            this.BtnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnSearch.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSearch.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtnSearch.Image = global::HugoSMS.WinForm.App.Properties.Resources.search;
-            this.BtnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnSearch.Location = new System.Drawing.Point(1145, 257);
-            this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(49, 45);
-            this.BtnSearch.TabIndex = 265;
-            this.BtnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnSearch.UseVisualStyleBackColor = true;
+            this.label4.Text = "비밀번호 :";
             // 
             // label3
             // 
@@ -225,25 +260,12 @@ namespace HugoSMS.WinForm.App.Views.Users
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1031, 452);
+            this.label5.Font = new System.Drawing.Font("나눔고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1059, 451);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 24);
+            this.label5.Size = new System.Drawing.Size(46, 21);
             this.label5.TabIndex = 262;
-            this.label5.Text = "Update";
-            // 
-            // BtnUpdate
-            // 
-            this.BtnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnUpdate.Image = global::HugoSMS.WinForm.App.Properties.Resources.ok_appproval_acceptance__1_;
-            this.BtnUpdate.Location = new System.Drawing.Point(1024, 393);
-            this.BtnUpdate.Name = "BtnUpdate";
-            this.BtnUpdate.Size = new System.Drawing.Size(93, 56);
-            this.BtnUpdate.TabIndex = 261;
-            this.BtnUpdate.UseVisualStyleBackColor = true;
+            this.label5.Text = "수정";
             // 
             // TxtSurName
             // 
@@ -291,9 +313,11 @@ namespace HugoSMS.WinForm.App.Views.Users
             // 
             // TxtIdNumber
             // 
+            this.TxtIdNumber.Enabled = false;
             this.TxtIdNumber.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtIdNumber.Location = new System.Drawing.Point(238, 276);
             this.TxtIdNumber.Name = "TxtIdNumber";
+            this.TxtIdNumber.ReadOnly = true;
             this.TxtIdNumber.Size = new System.Drawing.Size(285, 26);
             this.TxtIdNumber.TabIndex = 255;
             // 
@@ -302,11 +326,11 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(27, 286);
+            this.label7.Location = new System.Drawing.Point(27, 284);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 19);
+            this.label7.Size = new System.Drawing.Size(82, 19);
             this.label7.TabIndex = 254;
-            this.label7.Text = "Identity Number:";
+            this.label7.Text = "고유번호 : ";
             // 
             // LblUserID
             // 
@@ -325,9 +349,9 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label16.Location = new System.Drawing.Point(27, 255);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(68, 19);
+            this.label16.Size = new System.Drawing.Size(48, 19);
             this.label16.TabIndex = 252;
-            this.label16.Text = "User ID:";
+            this.label16.Text = "번호 :";
             // 
             // label10
             // 
@@ -336,70 +360,53 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label10.Location = new System.Drawing.Point(27, 371);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 19);
+            this.label10.Size = new System.Drawing.Size(67, 19);
             this.label10.TabIndex = 251;
-            this.label10.Text = "Email:";
+            this.label10.Text = "이메일 : ";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label19.Location = new System.Drawing.Point(27, 459);
+            this.label19.Location = new System.Drawing.Point(27, 458);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(90, 19);
+            this.label19.Size = new System.Drawing.Size(67, 19);
             this.label19.TabIndex = 250;
-            this.label19.Text = "Activated: ";
+            this.label19.Text = "활성화 : ";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(27, 430);
+            this.label13.Location = new System.Drawing.Point(27, 429);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(65, 19);
+            this.label13.Size = new System.Drawing.Size(97, 19);
             this.label13.TabIndex = 249;
-            this.label13.Text = "Admin:";
+            this.label13.Text = "관리자여부 : ";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(27, 341);
+            this.label9.Location = new System.Drawing.Point(27, 342);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 19);
+            this.label9.Size = new System.Drawing.Size(37, 19);
             this.label9.TabIndex = 248;
-            this.label9.Text = "Surname:";
+            this.label9.Text = "성 : ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(27, 312);
+            this.label6.Location = new System.Drawing.Point(27, 313);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 19);
+            this.label6.Size = new System.Drawing.Size(52, 19);
             this.label6.TabIndex = 247;
-            this.label6.Text = "Name:";
-            // 
-            // BtnBack
-            // 
-            this.BtnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBack.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBack.Image = global::HugoSMS.WinForm.App.Properties.Resources.reply__1_;
-            this.BtnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnBack.Location = new System.Drawing.Point(1123, 377);
-            this.BtnBack.Name = "BtnBack";
-            this.BtnBack.Size = new System.Drawing.Size(71, 104);
-            this.BtnBack.TabIndex = 246;
-            this.BtnBack.Text = "Back";
-            this.BtnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnBack.UseVisualStyleBackColor = true;
+            this.label6.Text = "이름 : ";
             // 
             // RboDeactivated
             // 
@@ -414,6 +421,7 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.RboDeactivated.TabStop = true;
             this.RboDeactivated.Text = "비활성";
             this.RboDeactivated.UseVisualStyleBackColor = true;
+            this.RboDeactivated.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // RboActivated
             // 
@@ -428,6 +436,7 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.RboActivated.TabStop = true;
             this.RboActivated.Text = "활성";
             this.RboActivated.UseVisualStyleBackColor = true;
+            this.RboActivated.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // RboAll
             // 
@@ -442,6 +451,7 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.RboAll.TabStop = true;
             this.RboAll.Text = "모두";
             this.RboAll.UseVisualStyleBackColor = true;
+            this.RboAll.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // label1
             // 
@@ -454,71 +464,55 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.label1.TabIndex = 242;
             this.label1.Text = "사용자 수정";
             // 
-            // UserID
+            // BtnSearch
             // 
-            this.UserID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.UserID.FillWeight = 213F;
-            this.UserID.HeaderText = "번호";
-            this.UserID.Name = "UserID";
-            this.UserID.ReadOnly = true;
-            this.UserID.Width = 54;
+            this.BtnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnSearch.BackgroundImage = global::HugoSMS.WinForm.App.Properties.Resources.search_;
+            this.BtnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnSearch.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSearch.Font = new System.Drawing.Font("나눔고딕 ExtraBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnSearch.Location = new System.Drawing.Point(1145, 257);
+            this.BtnSearch.Name = "BtnSearch";
+            this.BtnSearch.Size = new System.Drawing.Size(32, 32);
+            this.BtnSearch.TabIndex = 265;
+            this.BtnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
-            // UserIDentityNumber
+            // BtnUpdate
             // 
-            this.UserIDentityNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.UserIDentityNumber.FillWeight = 82F;
-            this.UserIDentityNumber.HeaderText = "고유번호";
-            this.UserIDentityNumber.Name = "UserIDentityNumber";
-            this.UserIDentityNumber.ReadOnly = true;
-            this.UserIDentityNumber.Width = 78;
+            this.BtnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnUpdate.BackgroundImage = global::HugoSMS.WinForm.App.Properties.Resources.sign_check;
+            this.BtnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUpdate.Location = new System.Drawing.Point(1050, 384);
+            this.BtnUpdate.Name = "BtnUpdate";
+            this.BtnUpdate.Size = new System.Drawing.Size(64, 64);
+            this.BtnUpdate.TabIndex = 261;
+            this.BtnUpdate.UseVisualStyleBackColor = true;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
-            // UserName
+            // BtnBack
             // 
-            this.UserName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.UserName.FillWeight = 200F;
-            this.UserName.HeaderText = "이름";
-            this.UserName.Name = "UserName";
-            this.UserName.ReadOnly = true;
-            this.UserName.Width = 54;
-            // 
-            // UserSurname
-            // 
-            this.UserSurname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.UserSurname.FillWeight = 150F;
-            this.UserSurname.HeaderText = "성";
-            this.UserSurname.Name = "UserSurname";
-            this.UserSurname.ReadOnly = true;
-            this.UserSurname.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.UserSurname.Width = 23;
-            // 
-            // UserEmail
-            // 
-            this.UserEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.UserEmail.FillWeight = 200F;
-            this.UserEmail.HeaderText = "이메일";
-            this.UserEmail.Name = "UserEmail";
-            this.UserEmail.ReadOnly = true;
-            this.UserEmail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.UserEmail.Width = 47;
-            // 
-            // UserAdmin
-            // 
-            this.UserAdmin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.UserAdmin.FillWeight = 60F;
-            this.UserAdmin.HeaderText = "관리자여부";
-            this.UserAdmin.Name = "UserAdmin";
-            this.UserAdmin.ReadOnly = true;
-            this.UserAdmin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.UserAdmin.Width = 71;
-            // 
-            // UserActivated
-            // 
-            this.UserActivated.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.UserActivated.FillWeight = 60F;
-            this.UserActivated.HeaderText = "활성화";
-            this.UserActivated.Name = "UserActivated";
-            this.UserActivated.ReadOnly = true;
-            this.UserActivated.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.BtnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnBack.BackgroundImage = global::HugoSMS.WinForm.App.Properties.Resources.back_arrow;
+            this.BtnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBack.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnBack.Location = new System.Drawing.Point(1120, 363);
+            this.BtnBack.Name = "BtnBack";
+            this.BtnBack.Size = new System.Drawing.Size(57, 116);
+            this.BtnBack.TabIndex = 246;
+            this.BtnBack.Text = "뒤로";
+            this.BtnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnBack.UseVisualStyleBackColor = true;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // EditUserView
             // 

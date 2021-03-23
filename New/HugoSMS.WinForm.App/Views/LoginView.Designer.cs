@@ -70,14 +70,14 @@ namespace HugoSMS.WinForm.App.Views
             // 
             // BtnLogin
             // 
-            this.BtnLogin.BackgroundImage = global::HugoSMS.WinForm.App.Properties.Resources.ok_appproval_acceptance__1_;
+            this.BtnLogin.BackgroundImage = global::HugoSMS.WinForm.App.Properties.Resources.unlock2;
             this.BtnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnLogin.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLogin.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.BtnLogin.Location = new System.Drawing.Point(202, 293);
+            this.BtnLogin.Location = new System.Drawing.Point(217, 285);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(93, 56);
+            this.BtnLogin.Size = new System.Drawing.Size(64, 64);
             this.BtnLogin.TabIndex = 38;
             this.BtnLogin.UseVisualStyleBackColor = true;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
