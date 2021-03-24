@@ -21,7 +21,7 @@ namespace HugoSMS.WinForm.App.Business
         /// <returns></returns>
         public static List<User> GetUsers()
         {
-            List<User> users = new List<User>();
+            List<User> users;
             using (var ctx = new ssmsEntities())
             {
                 users = ctx.User.ToList();
@@ -46,6 +46,34 @@ namespace HugoSMS.WinForm.App.Business
 
         #endregion
 
+        #region STORE영역
 
+        public static List<Store> GetStores()
+        {
+            List<Store> stores;
+            using (var ctx = new ssmsEntities())
+            {
+                stores = ctx.Store.ToList();
+            }
+
+            return stores;
+        }
+
+        #endregion
+
+        #region ITEM영역
+
+        public static List<Item> GetItems()
+        {
+            List<Item> items;
+            using (var ctx = new ssmsEntities())
+            {
+                items = ctx.Item.ToList();
+            }
+
+            return items;
+        }
+
+        #endregion
     }
 }

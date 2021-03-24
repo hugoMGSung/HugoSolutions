@@ -29,7 +29,7 @@ namespace HugoSMS.WinForm.App.Views.Users
         /// </summary>
         private void InitializeComponent()
         {
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.DlgExportPdf = new System.Windows.Forms.SaveFileDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnDeactivateUser = new System.Windows.Forms.Button();
             this.RboActivated = new System.Windows.Forms.RadioButton();
@@ -72,7 +72,7 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.BtnDeactivateUser.Location = new System.Drawing.Point(971, 163);
             this.BtnDeactivateUser.Name = "BtnDeactivateUser";
             this.BtnDeactivateUser.Size = new System.Drawing.Size(228, 43);
-            this.BtnDeactivateUser.TabIndex = 106;
+            this.BtnDeactivateUser.TabIndex = 107;
             this.BtnDeactivateUser.Tag = "ACTIVATE";
             this.BtnDeactivateUser.Text = "사용자 비활성화";
             this.BtnDeactivateUser.UseVisualStyleBackColor = false;
@@ -87,7 +87,7 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.RboActivated.Location = new System.Drawing.Point(849, 28);
             this.RboActivated.Name = "RboActivated";
             this.RboActivated.Size = new System.Drawing.Size(49, 19);
-            this.RboActivated.TabIndex = 104;
+            this.RboActivated.TabIndex = 102;
             this.RboActivated.TabStop = true;
             this.RboActivated.Text = "활성";
             this.RboActivated.UseVisualStyleBackColor = true;
@@ -102,7 +102,7 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.RboAll.Location = new System.Drawing.Point(794, 28);
             this.RboAll.Name = "RboAll";
             this.RboAll.Size = new System.Drawing.Size(49, 19);
-            this.RboAll.TabIndex = 103;
+            this.RboAll.TabIndex = 101;
             this.RboAll.TabStop = true;
             this.RboAll.Text = "모두";
             this.RboAll.UseVisualStyleBackColor = true;
@@ -120,10 +120,11 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.BtnExportPdf.Location = new System.Drawing.Point(971, 16);
             this.BtnExportPdf.Name = "BtnExportPdf";
             this.BtnExportPdf.Size = new System.Drawing.Size(228, 43);
-            this.BtnExportPdf.TabIndex = 102;
+            this.BtnExportPdf.TabIndex = 104;
             this.BtnExportPdf.Tag = "EXPORT";
             this.BtnExportPdf.Text = "PDF 익스포트";
             this.BtnExportPdf.UseVisualStyleBackColor = false;
+            this.BtnExportPdf.Click += new System.EventHandler(this.BtnExportPdf_Click);
             // 
             // BtnUpdateUser
             // 
@@ -137,7 +138,7 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.BtnUpdateUser.Location = new System.Drawing.Point(971, 114);
             this.BtnUpdateUser.Name = "BtnUpdateUser";
             this.BtnUpdateUser.Size = new System.Drawing.Size(228, 43);
-            this.BtnUpdateUser.TabIndex = 101;
+            this.BtnUpdateUser.TabIndex = 106;
             this.BtnUpdateUser.Tag = "UPDATE";
             this.BtnUpdateUser.Text = "사용자 수정";
             this.BtnUpdateUser.UseVisualStyleBackColor = false;
@@ -155,7 +156,7 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.BtnAddUser.Location = new System.Drawing.Point(971, 65);
             this.BtnAddUser.Name = "BtnAddUser";
             this.BtnAddUser.Size = new System.Drawing.Size(228, 43);
-            this.BtnAddUser.TabIndex = 100;
+            this.BtnAddUser.TabIndex = 105;
             this.BtnAddUser.Tag = "ADD";
             this.BtnAddUser.Text = "사용자 추가";
             this.BtnAddUser.UseVisualStyleBackColor = false;
@@ -249,7 +250,7 @@ namespace HugoSMS.WinForm.App.Views.Users
             this.RboDeactivated.Location = new System.Drawing.Point(904, 28);
             this.RboDeactivated.Name = "RboDeactivated";
             this.RboDeactivated.Size = new System.Drawing.Size(61, 19);
-            this.RboDeactivated.TabIndex = 105;
+            this.RboDeactivated.TabIndex = 103;
             this.RboDeactivated.TabStop = true;
             this.RboDeactivated.Text = "비활성";
             this.RboDeactivated.UseVisualStyleBackColor = true;
@@ -279,7 +280,7 @@ namespace HugoSMS.WinForm.App.Views.Users
 
         #endregion
 
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.SaveFileDialog DlgExportPdf;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnDeactivateUser;
         private System.Windows.Forms.RadioButton RboActivated;

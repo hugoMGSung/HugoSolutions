@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
 using HugoSMS.WinForm.App.Helpers;
+using HugoSMS.WinForm.App.Models;
 using HugoSMS.WinForm.App.Views.Items;
 using HugoSMS.WinForm.App.Views.MyAccount;
+using HugoSMS.WinForm.App.Views.Stores;
 using HugoSMS.WinForm.App.Views.Users;
 using MetroFramework;
 
@@ -84,6 +86,15 @@ namespace HugoSMS.WinForm.App.Views
                     COMMONS.LOGGER.Info("MyAccount change!");
                     ChangeView<AccountView>();
                 }
+            }
+        }
+
+        private void BtnStores_Click(object sender, EventArgs e)
+        {
+            if (COMMONS.IS_SCAN != true)
+            {
+                COMMONS.LOGGER.Info("StoreView change!");
+                ChangeView<StoreView>();
             }
         }
     }

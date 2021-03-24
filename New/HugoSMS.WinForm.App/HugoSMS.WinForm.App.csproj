@@ -36,11 +36,17 @@
     <ApplicationIcon>stock.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -165,6 +171,12 @@
     <Compile Include="Views\MyAccount\EditAccountView.Designer.cs">
       <DependentUpon>EditAccountView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Stores\StoreView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Stores\StoreView.Designer.cs">
+      <DependentUpon>StoreView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Users\AddUserView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -216,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MyAccount\EditAccountView.resx">
       <DependentUpon>EditAccountView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Stores\StoreView.resx">
+      <DependentUpon>StoreView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Users\AddUserView.resx">
       <DependentUpon>AddUserView.cs</DependentUpon>

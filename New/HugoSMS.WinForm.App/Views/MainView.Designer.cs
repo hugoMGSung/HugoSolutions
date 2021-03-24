@@ -150,6 +150,7 @@ namespace HugoSMS.WinForm.App.Views
             this.BtnStores.Text = "창고";
             this.BtnStores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnStores.UseVisualStyleBackColor = false;
+            this.BtnStores.Click += new System.EventHandler(this.BtnStores_Click);
             // 
             // BtnItemsOut
             // 
